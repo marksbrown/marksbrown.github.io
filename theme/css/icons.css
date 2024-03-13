@@ -1,0 +1,6 @@
+svg[name="sinc"] {
+    width: 100%;
+    height: var(--s3);
+    background-repeat: no-repeat;
+    background-position: center;
+}

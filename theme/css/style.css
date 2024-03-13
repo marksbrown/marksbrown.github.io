@@ -1,0 +1,126 @@
+:root {
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-size: calc(0.2vw + 1rem);
+  --col1 :#3ebddb;
+  --col2: #94dbeb;
+  --col3: #69cce3;
+  --col4: #3ebddb;
+  --col5: #24a4c1;
+  --col6: #1c7f96;
+  --col7: #145b6b;
+  --col8: #0c3740;
+  --col9: #041215;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--col8);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: var(--s-1);
+  padding-left: var(--s-1);
+  padding-right: var(--s-1);
+  color: white;
+  border: var(--s-1) double var(--col6);
+  min-height: 100vh;
+}
+
+footer {
+  font-size: var(--s-1);
+  margin-top: var(--s1);
+  margin-bottom: var(--s1);
+  text-align: center;
+}
+
+img, video {
+  border-radius: var(--s-2);
+}
+
+img {
+  max-width: var(--max-width);
+}
+
+video{
+  max-width: calc(var(--max-width) / 2 - var(--s-1)*2);
+}
+h1, h2, h3, h4, h5 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+a {
+  color: white;
+  text-decoration-style: double;
+  text-decoration-thickness: 0.05em;
+  text-decoration-color: var(--col5);
+}
+
+a:hover {
+  transition: 200ms;
+  text-decoration-color: var(--col3);
+  color: var(--col3);
+}
+
+#header *{
+  text-align: center;
+}
+
+content {
+  font-size: 0.95em;
+  text-align: justify;
+}
+
+.active {
+  font-weight: bolder;
+}
+
+.responsive-cal {
+position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
+}
+
+.responsive-cal iframe {
+  position: absolute; top:0; left: 0; width: 100%; height: 100%;
+}
+
+#pagination {
+  margin-top: var(--s0);
+  margin-bottom: var(--s0);
+}
+
+#pagination > a, .tag {
+  border: 2px solid var(--col2);
+  border-radius: var(--s-1);
+  padding: var(--s-5) var(--s-3) var(--s-5) var(--s-3);
+  text-decoration: none;
+}
+
+#pagination > a + a {
+  margin-left: var(--s0);
+}
+
+nav,
+time {
+  font-weight: bolder;
+}
+
+navbar > h1 {
+  padding-top: var(--s1);
+}
+
+.imposter > svg {
+  position: relative;
+}
+
+.highlight {
+  padding: var(--s-5) var(--s-1) var(--s-5) var(--s-1);
+  border-radius: var(--s-3);
+  overflow-x: scroll;
+  scrollbar-base-color: white;
+}
