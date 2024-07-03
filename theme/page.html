@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}???{{ super() }}{% endblock %}
+
+{% block head %}
+{{ super() }}
+WTF
+{% endblock %}
+
+{% block content %}
+<article>
+  {% include "partial/blurb.html" %}
+  <content>
+    {{ article.content }}
+  </content>
+</article>
+{% endblock %}
+
+
+{% block after_content %}
+{{ super() }}
+
+{% endblock %}

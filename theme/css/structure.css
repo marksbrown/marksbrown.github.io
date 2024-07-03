@@ -1,5 +1,8 @@
 :root {
   --ratio: 1.4;
+  --s-8: calc(var(--s-7) / var(--ratio));
+  --s-7: calc(var(--s-6) / var(--ratio));
+  --s-6: calc(var(--s-5) / var(--ratio));
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
   --s-3: calc(var(--s-2) / var(--ratio));
@@ -11,7 +14,7 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
-  --max-width: 90ch;
+  --max-width: 80ch;
 }
 
 * {
@@ -79,6 +82,21 @@ p{
   max-height: calc(100% - 2rem);
 }
 
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc(( 24rem - 100%) * 999);
+}
+
+.switcher > :nth-last-child(n+ 4),
+.switcher > :nth-last-child(n+ 4) ~ * {
+  flex-basis: 100%;
+}
+
 /* Custom */
 
 
@@ -89,9 +107,7 @@ p{
 .not-active {
   pointer-events: none;
   cursor: default;
-  color: var(--col8);
+  background-color: var(--col7);
+  color: var(--col7);
 }
 
-.center-y > * {
-  align-items: center;
-}
