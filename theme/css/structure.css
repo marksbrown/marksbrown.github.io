@@ -111,3 +111,6 @@ p{
   color: var(--col7);
 }
 
+.doctest-block {
+  overflow-x: scroll;
+}

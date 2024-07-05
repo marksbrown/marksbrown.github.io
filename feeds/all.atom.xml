@@ -385,7 +385,7 @@ In battleships we want the computer to find all the ships we have hidden.&lt;/p&
 &lt;p&gt;Ideally we want the computer to visit every tile just once.
 Furthermore we want the computer to guess adjacent tiles if the computer does in fact get a hit&lt;/p&gt;
 &lt;p&gt;Here's a gif showing my implementation&lt;/p&gt;
-&lt;img alt="Animation of crude algorithm for battleships computer player. Here we can see that the computer will, once it finds a portion of a ship, prioritise searching adjacent tiles first." src="/images/turtle/battleships.gif" /&gt;
+&lt;img alt="Animation of crude algorithm for battleships computer player. Here we can see that the computer will, once it finds a portion of a ship, prioritise searching adjacent tiles first." src="/images/battleships.gif" /&gt;
 &lt;p&gt;Here red squares indicate misses and green indicate hits.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Extensions&lt;/strong&gt;&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
