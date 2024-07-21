@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mark Brown Private Tuition - battleships</title><link href="/" rel="alternate"></link><link href="/feeds/battleships.atom.xml" rel="self"></link><id>/</id><updated>2024-07-08T00:00:00+01:00</updated><entry><title>Implementing Battleships</title><link href="/resources/battleships/2024/07/08/implementing-battleships" rel="alternate"></link><published>2024-07-08T00:00:00+01:00</published><updated>2024-07-08T00:00:00+01:00</updated><author><name>Dr Mark S. Brown</name></author><id>tag:None,2024-07-08:/resources/battleships/2024/07/08/implementing-battleships</id><summary type="html">&lt;h1&gt;Prerequisities &amp;amp; an Introduction&lt;/h1&gt;
+&lt;p&gt;To begin, it's important to outline what topics in Python you should (ideally) be familiar with.
+Where possible, I'll link back to useful materials.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Basics of Imperative Programming&lt;/li&gt;
+&lt;li&gt;Classes (Introduction to Classes in Python)&lt;/li&gt;
+&lt;li&gt;Non-standard libraries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this series, we'll be producing a version of the (once …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Prerequisities &amp;amp; an Introduction&lt;/h1&gt;
+&lt;p&gt;To begin, it's important to outline what topics in Python you should (ideally) be familiar with.
+Where possible, I'll link back to useful materials.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Basics of Imperative Programming&lt;/li&gt;
+&lt;li&gt;Classes (Introduction to Classes in Python)&lt;/li&gt;
+&lt;li&gt;Non-standard libraries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this series, we'll be producing a version of the (once?) popular game, Battleships.
+Part by part, we'll build up our game.
+Each part, I'll go through what I've learnt and what I think should be implemented next.
+When working on your own projects, it will be often be difficult to know where to begin.
+My hope is that series like this will provide an useful insight for those starting out, or improving their programming.&lt;/p&gt;
+&lt;h1&gt;What is Battleships?&lt;/h1&gt;
+&lt;p&gt;First, go play battleships.
+\url{https://en.wikipedia.org/wiki/Battleship_(game)}.&lt;/p&gt;
+&lt;p&gt;Battleships is a two-player game played on two square grids.
+Each player places their ships and each opposing player, tries to guess the location of their ships.
+The first player to find the location of all ships in all places wins!&lt;/p&gt;
+&lt;p&gt;Battleships is a guessing game played between two players.
+To begin, each player is given a two-dimensional square array of side $N$.
+Players then play `ships', one-dimensional arrays of length $L$ into this larger array in the horizontal or vertical. 
+Horizontal and vertical being arrays of size $L\times 1$ or $1 \times L$ respectively.
+If these sentences make no sense, look at figure~\ref{fig:battleship-eg} and re-read the above until it does.&lt;/p&gt;
+&lt;p&gt;As hours of programming can sometimes outweigh minutes of programming, let's first err - spend an hour programming. This first step, without research, is for us to explore a simple naive approach.
+An approach which (hopefully) will give us a prototype.
+We will `mine' this prototype for useful chunks of code, along with any interesting questions we run into.&lt;/p&gt;
+&lt;p&gt;Given that the game is played on a two-dimensional grid, it makes sense for us to consider a two-dimensional array.
+For simplicities sake, let's ignore anything that isn't in the Python standard library, at least initially.&lt;/p&gt;
+&lt;h1&gt;Prototyping Battleships&lt;/h1&gt;
+&lt;h2&gt;Abstraction&lt;/h2&gt;
+&lt;p&gt;Battleships is a guessing game played on a two-dimensional array.
+Ships, one-dimensional arrays organised vertically or horizontally are placed onto this board.
+Let an empty space be a 0 and a full space be a 1.
+We will require that ships cannot overlap!&lt;/p&gt;
+&lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span class="liquid-tags-code-filename"&gt;part1.py&lt;/span&gt;&lt;span class="liquid-tags-code-lines"&gt;[Lines 3-15]&lt;/span&gt;&lt;a href='/code/battleships/part1.py'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;create_empty_board&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;  &amp;gt;&amp;gt;&amp;gt; create_empty_board(2)&lt;/span&gt;
+&lt;span class="sd"&gt;  [[0, 0], [0, 0]]&lt;/span&gt;
+&lt;span class="sd"&gt;  &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+  &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Cannot have a negative board size!&amp;quot;&lt;/span&gt;
+  &lt;span class="n"&gt;board&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+  &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;row&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+      &lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;board&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;board&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+&lt;p&gt;"""
+Well this works but I don't like how it prints
+I want to print nicely!
+We also are going to need a way for players to specify a coordinate -&amp;gt; so let's nick the approach from Chess
+Rank vs file&lt;/p&gt;
+&lt;p&gt;print(..., ..., sep=..., end=...)
+sep : separator - print these inbetween everything we print
+end : end characters - print these at the end&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;print(1,2,3, sep="+", end="=")
+'1+2+3='
+"""&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;def print_board(board, sep = "  "):
+  """
+  This procedure prints an ASCII version of the board
+  """
+  print(sep, end=" ")
+  for letter in ascii_uppercase[:N]:
+    print(letter, end=sep)&lt;/p&gt;
+&lt;p&gt;j = 1
+  print("")
+  for row in board:
+    print(j, end=sep)
+    j += 1
+    for sym in row:
+      print(sym, end=sep)
+    print("")&lt;/p&gt;
+&lt;p&gt;def check_horizontal(board, sym, row, L):
+  col = ascii_uppercase.index(sym)&lt;/p&gt;
+&lt;p&gt;valid = 0 &amp;lt;= col &amp;lt; N - L
+  if not valid:
+    return valid
+  for j in range(col, col + L):
+    if board[row-1][j] == 1:
+      valid = False&lt;/p&gt;
+&lt;p&gt;return valid&lt;/p&gt;
+&lt;h1&gt;write check_if_empty_vertical&lt;/h1&gt;
+&lt;p&gt;def check_vertical(board, sym, row, L):
+  col = ascii_uppercase.index(sym)&lt;/p&gt;
+&lt;p&gt;valid = 0 &amp;lt;= row &amp;lt; N - L
+  if not valid:
+    return valid
+  for j in range(row - 1, row + L - 1):
+    if board[j][col] == 1:
+      valid = False&lt;/p&gt;
+&lt;p&gt;return valid&lt;/p&gt;
+&lt;p&gt;"""
+What is a ship? A ship is a 1D array either horizontal or vertical.&lt;/p&gt;
+&lt;p&gt;So a ship of length 3 could be 
+1 1 1
+or
+1
+1
+1&lt;/p&gt;
+&lt;p&gt;Q. How do we place ships?
+Q. How can we get the user to do  this?
+Q. How do we ensure ships are placed validly?
+Q. What are invalid ship placements?&lt;/p&gt;
+&lt;p&gt;Why did we need the print before anything else?&lt;/p&gt;
+&lt;p&gt;Everytime you get stuck on a small problem, write about it.
+Discuss it. Research it.
+"""&lt;/p&gt;
+&lt;h1&gt;Let's try placing a ship that is length 3 into this board&lt;/h1&gt;
+&lt;h2&gt;GAME STARTS HERE&lt;/h2&gt;
+&lt;p&gt;N = 6
+board = create_empty_board(N)&lt;/p&gt;
+&lt;h1&gt;Places a 3 length ship horizontally&lt;/h1&gt;
+&lt;p&gt;sym = 'C'
+row = 3
+L = 3&lt;/p&gt;
+&lt;p&gt;if check_horizontal(board, sym, row, L):
+  col = ascii_uppercase.index(sym)
+  for j in range(col, col + L):
+    board[row-1][j] = 1&lt;/p&gt;
+&lt;h2&gt;place a 4 length ship vertically&lt;/h2&gt;
+&lt;p&gt;sym = 'A'
+row = 1
+L = 4&lt;/p&gt;
+&lt;p&gt;if check_vertical(board, sym, row, L):
+  col = ascii_uppercase.index(sym)
+  for j in range(row - 1, row + L - 1):
+    board[j][col] = 1&lt;/p&gt;
+&lt;p&gt;print_board(board)&lt;/p&gt;
+&lt;p&gt;"""
+Let's say we've written some code
+and it looks good.
+How do we know if it's right?&lt;/p&gt;
+&lt;p&gt;We need to test it!&lt;/p&gt;
+&lt;p&gt;"""&lt;/p&gt;</content><category term="battleships"></category><category term="project"></category><category term="battleship"></category><category term="python"></category></entry></feed>

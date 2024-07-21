@@ -28,6 +28,10 @@ body {
   min-height: 100vh;
 }
 
+p {
+  text-align: left;
+}
+
 footer {
   font-size: var(--s-1);
   margin-top: var(--s1);
@@ -148,12 +152,17 @@ time {
   position: relative;
 }
 
-.highlight {
+figure, .highlight {
   padding: var(--s-5) var(--s-1) var(--s-5) var(--s-1);
   border-radius: var(--s-3);
   overflow-x: scroll;
   scrollbar-base-color: white;
 }
+
+figure + figure {
+  padding-top:0;
+}
+
 
 table {
   width : 95%;

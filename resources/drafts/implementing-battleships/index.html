@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mark Brown Private Tuition - Implementing Battleships</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/structure.css?q=" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/icons.css?q=" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/style.css?q=" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/monokai.min.css" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="alternate icon" href="/images/favicon.ico">
+
+
+
+
+<meta name="tags" content="project" />
+<meta name="tags" content="battleship" />
+<meta name="tags" content="python" />
+  </head>
+  <body>
+    <div id="header" class="stack center">
+<navbar class="cluster">
+  <div>
+  <nav class="center">
+    <a href="/about-me">About Me</a>
+    <a href="/testimonials">Testimonials</a>
+    <a href="/resources">Resources</a>
+  </div>
+  </nav>
+</navbar>      <h1><a class="halfwidth" href="/">Mark Brown Private Tuition</a></h1>
+      <p class="center halfwidth">
+Physics, Mathematics & Computer Science
+<br>
+Since 2014
+</p>
+<div id="sinc">
+<svg name="sinc" version="1.1" viewBox="0 0 94.653 14.524" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(-27.67 -105.72)">
+        <path d="m29.997 113.21c0.47619-1e-3 0.95238-2e-3 1.4286-3.4e-4 0.47619 1e-3 0.95238 5e-3 1.4286 0.0102 0.47619 5e-3 0.95238 0.0131 1.4286 0.0211 0.47619 8e-3 0.95238 0.0161 1.4286 0.0204 0.47619 4e-3 0.95238 5e-3 1.4286-3e-3 0.47619-7e-3 0.95238-0.0228 1.4286-0.0454 0.47619-0.0226 0.95238-0.0524 1.4286-0.0808 0.47619-0.0285 0.95238-0.0552 1.4286-0.0664 0.47619-0.0112 0.95238-6e-3 1.4286 0.0246 0.47619 0.0306 0.95238 0.0876 1.4286 0.16284 0.47619 0.0752 0.95238 0.16863 1.4286 0.25079 0.47619 0.0822 0.95238 0.15144 1.4286 0.17094 0.47619 0.0195 0.95238-0.0133 1.4286-0.11307 0.47619-0.0998 0.95238-0.26801 1.4286-0.47084s0.95238-0.43873 1.4286-0.62912c0.47619-0.1904 0.95238-0.33072 1.4286-0.34408 0.47619-0.0134 0.95238 0.10514 1.4286 0.36346 0.47619 0.25832 0.95238 0.65747 1.4286 1.0996 0.47619 0.44215 0.95238 0.92202 1.4286 1.275 0.47619 0.35295 0.95238 0.56963 1.4286 0.52892 0.47619-0.0407 0.95238-0.34569 1.4286-0.88027 0.47619-0.5346 0.95238-1.2967 1.4286-2.0761 0.47619-0.77936 0.95238-1.5642 1.4286-2.0847 0.47619-0.52044 0.95238-0.76226 1.4286-0.58873 0.47619 0.17353 0.95238 0.76834 1.4286 1.6561 0.47619 0.8878 0.95238 2.0601 1.4286 3.1704 0.47619 1.1103 0.95238 2.1401 1.4286 2.745 0.47619 0.60492 0.95238 0.76925 1.4286 0.40036s0.95238-1.2718 1.4286-2.458c0.47619-1.1862 0.95238-2.6398 1.4286-3.9176 0.47619-1.2778 0.95238-2.358 1.4286-2.9036 0.47619-0.54555 0.95238-0.54452 1.4286 0 0.47619 0.54452 0.95238 1.6262 1.4286 2.9036 0.47619 1.2774 0.95238 2.7309 1.4286 3.9176 0.47619 1.1867 0.95238 2.0881 1.4286 2.458 0.47619 0.3699 0.95238 0.20374 1.4286-0.40036 0.47619-0.6041 0.95238-1.6349 1.4286-2.745 0.47619-1.1102 0.95238-2.2821 1.4286-3.1704 0.47619-0.88833 0.95238-1.4818 1.4286-1.6561 0.47619-0.17432 0.95238 0.0688 1.4286 0.58873 0.47619 0.51991 0.95238 1.3053 1.4286 2.0847 0.47619 0.77936 0.95238 1.5411 1.4286 2.0761 0.47619 0.53501 0.95238 0.83906 1.4286 0.88027 0.47619 0.0412 0.95238-0.17622 1.4286-0.52892 0.47619-0.35269 0.95238-0.83275 1.4286-1.275 0.47619-0.44223 0.95238-0.84105 1.4286-1.0996 0.47619-0.25859 0.95238-0.37657 1.4286-0.36346 0.47619 0.0131 0.95238 0.15377 1.4286 0.34408 0.47619 0.1903 0.95238 0.42622 1.4286 0.62912 0.47619 0.20289 0.95238 0.37092 1.4286 0.47084 0.47619 0.0999 0.95238 0.13246 1.4286 0.11307 0.47619-0.0194 0.95238-0.0888 1.4286-0.17094 0.47619-0.0821 0.95239-0.17551 1.4286-0.25079 0.47619-0.0753 0.95238-0.13215 1.4286-0.16284 0.47619-0.0307 0.95238-0.0358 1.4286-0.0246s0.95238 0.0379 1.4286 0.0664 0.95238 0.0583 1.4286 0.0808c0.47619 0.0226 0.95238 0.038 1.4286 0.0454 0.47619 7e-3 0.95238 7e-3 1.4286 3e-3s0.95239-0.0125 1.4286-0.0204c0.47619-8e-3 0.95238-0.0156 1.4286-0.0211 0.47619-5e-3 0.95238-9e-3 1.4286-0.0102 0.47619-1e-3 0.95238-8.2e-4 1.4286 3.4e-4" fill="none" stroke="#3ebddb" stroke-linecap="round" stroke-width="1px" title="sinc"/>
+    </g></svg>
+  </div><address class="cluster">
+  <div class="switcher center">
+    <a class='icon' alt=email class="sc-email" href="mailto:contact@markbrowntuition.co.uk" target="_blank">
+      <img src="/images/icons/email.svg"> email
+    </a>
+    <a class='icon' alt=facebook class="sc-facebook" href="https://www.facebook.com/markbrowntuition" target="_blank">
+      <img src="/images/icons/facebook.svg"> facebook
+    </a>
+    <a class='icon' alt=superprof class="sc-superprof" href="https://www.superprof.co.uk/maths-physics-computer-science-programming-online-slots-available-monday-thursday-for-2023-2024-academic-year.html" target="_blank">
+      <img src="/images/icons/superprof.svg"> superprof
+    </a>
+  </div>
+</address>    </div>
+    <content>
+<header>
+  <h2><a href="/resources/drafts/implementing-battleships/"
+      title="Permalink to Implementing Battleships">Implementing Battleships    </a>
+  </h2>
+  <div class="cluster">
+    <div>
+      <p>Written on <time datetime="2024-07-08T00:00:00+01:00">Mon 08 July 2024</time></p>
+
+      <p> Part <built-in method index of str object at 0x71b1b04bafb0></p>
+      <div class='cluster'>
+        <div>
+          <a class="tag" href="/tag/project.html">project</a>
+          <a class="tag" href="/tag/battleship.html">battleship</a>
+          <a class="tag" href="/tag/python.html">python</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>  <h1>Prerequisities &amp; an Introduction</h1>
+<p>To begin, it's important to outline what topics in Python you should (ideally) be familiar with.
+Where possible, I'll link back to useful materials.</p>
+<ul>
+<li>Basics of Imperative Programming</li>
+<li>Classes (Introduction to Classes in Python)</li>
+<li>Non-standard libraries</li>
+</ul>
+<p>In this series, we'll be producing a version of the (once?) popular game, Battleships.
+Part by part, we'll build up our game.
+Each part, I'll go through what I've learnt and what I think should be implemented next.
+When working on your own projects, it will be often be difficult to know where to begin.
+My hope is that series like this will provide an useful insight for those starting out, or improving their programming.</p>
+<h1>What is Battleships?</h1>
+<p>First, go play battleships.
+\url{https://en.wikipedia.org/wiki/Battleship_(game)}.</p>
+<p>Battleships is a two-player game played on two square grids.
+Each player places their ships and each opposing player, tries to guess the location of their ships.
+The first player to find the location of all ships in all places wins!</p>
+<p>Battleships is a guessing game played between two players.
+To begin, each player is given a two-dimensional square array of side $N$.
+Players then play `ships', one-dimensional arrays of length $L$ into this larger array in the horizontal or vertical. 
+Horizontal and vertical being arrays of size $L\times 1$ or $1 \times L$ respectively.
+If these sentences make no sense, look at figure~\ref{fig:battleship-eg} and re-read the above until it does.</p>
+<p>As hours of programming can sometimes outweigh minutes of programming, let's first err - spend an hour programming. This first step, without research, is for us to explore a simple naive approach.
+An approach which (hopefully) will give us a prototype.
+We will `mine' this prototype for useful chunks of code, along with any interesting questions we run into.</p>
+<p>Given that the game is played on a two-dimensional grid, it makes sense for us to consider a two-dimensional array.
+For simplicities sake, let's ignore anything that isn't in the Python standard library, at least initially.</p>
+<h1>Prototyping Battleships</h1>
+<h2>Abstraction</h2>
+<p>Battleships is a guessing game played on a two-dimensional array.
+Ships, one-dimensional arrays organised vertically or horizontally are placed onto this board.</p>
+<p>Let an empty space be a 0 and a full space be a 1.
+We will require that ships cannot overlap!</p>
+<h2>Packing Problem</h2>
+<p>How do we insert 'ships' onto our 'board'?
+"""</p>
+<p>"""
+Method 1. Create a 2D array and then randomly place ships
+Err how big should the board be?</p>
+<p>N = 12  # initial guess - TODO : research this later on
+"""
+from string import ascii_uppercase</p>
+<p>def create_empty_board(N):
+  """</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>create_empty_board(2)
+  [[0, 0], [0, 0]]
+  """
+  assert N &gt; 0, "Cannot have a negative board size!"
+  board = []
+  for _ in range(N):
+    row = []
+    for _ in range(N):
+      row.append(0)
+    board.append(row)
+  return board</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>TESTING = False</p>
+<p>if TESTING:
+  import doctest
+  doctest.testmod(verbose=True)</p>
+<p>"""
+Well this works but I don't like how it prints
+I want to print nicely!
+We also are going to need a way for players to specify a coordinate -&gt; so let's nick the approach from Chess
+Rank vs file</p>
+<p>print(..., ..., sep=..., end=...)
+sep : separator - print these inbetween everything we print
+end : end characters - print these at the end</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>print(1,2,3, sep="+", end="=")
+'1+2+3='
+"""</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>def print_board(board, sep = "  "):
+  """
+  This procedure prints an ASCII version of the board
+  """
+  print(sep, end=" ")
+  for letter in ascii_uppercase[:N]:
+    print(letter, end=sep)</p>
+<p>j = 1
+  print("")
+  for row in board:
+    print(j, end=sep)
+    j += 1
+    for sym in row:
+      print(sym, end=sep)
+    print("")</p>
+<p>def check_horizontal(board, sym, row, L):
+  col = ascii_uppercase.index(sym)</p>
+<p>valid = 0 &lt;= col &lt; N - L
+  if not valid:
+    return valid
+  for j in range(col, col + L):
+    if board[row-1][j] == 1:
+      valid = False</p>
+<p>return valid</p>
+<h1>write check_if_empty_vertical</h1>
+<p>def check_vertical(board, sym, row, L):
+  col = ascii_uppercase.index(sym)</p>
+<p>valid = 0 &lt;= row &lt; N - L
+  if not valid:
+    return valid
+  for j in range(row - 1, row + L - 1):
+    if board[j][col] == 1:
+      valid = False</p>
+<p>return valid</p>
+<p>"""
+What is a ship? A ship is a 1D array either horizontal or vertical.</p>
+<p>So a ship of length 3 could be 
+1 1 1
+or
+1
+1
+1</p>
+<p>Q. How do we place ships?
+Q. How can we get the user to do  this?
+Q. How do we ensure ships are placed validly?
+Q. What are invalid ship placements?</p>
+<p>Why did we need the print before anything else?</p>
+<p>Everytime you get stuck on a small problem, write about it.
+Discuss it. Research it.
+"""</p>
+<h1>Let's try placing a ship that is length 3 into this board</h1>
+<h2>GAME STARTS HERE</h2>
+<p>N = 6
+board = create_empty_board(N)</p>
+<h1>Places a 3 length ship horizontally</h1>
+<p>sym = 'C'
+row = 3
+L = 3</p>
+<p>if check_horizontal(board, sym, row, L):
+  col = ascii_uppercase.index(sym)
+  for j in range(col, col + L):
+    board[row-1][j] = 1</p>
+<h2>place a 4 length ship vertically</h2>
+<p>sym = 'A'
+row = 1
+L = 4</p>
+<p>if check_vertical(board, sym, row, L):
+  col = ascii_uppercase.index(sym)
+  for j in range(row - 1, row + L - 1):
+    board[j][col] = 1</p>
+<p>print_board(board)</p>
+<p>"""
+Let's say we've written some code
+and it looks good.
+How do we know if it's right?</p>
+<p>We need to test it!</p>
+<p>"""</p>
+
+
+<blockquote class='series'>
+  <h5>This post is part <built-in method index of str object at 0x71b1b04bafb0> of the " series</h5>
+  <dl>
+  </dl>
+</blockquote>
+
+    </content>
+
+    <footer class="center stack">
+      <p>(C) 2024 Mark Brown Private Tuition</p>
+    </footer>
+  </body>
+</html>
