@@ -1,7 +1,7 @@
 :root {
 font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
   font-size: calc(0.3vw + 1rem);
-  line-height: 1.6;
+  line-height: 1.8;
   --col1 :#3ebddb;
   --col2: #94dbeb;
   --col3: #69cce3;
@@ -61,11 +61,16 @@ img {
  --space: var(--s-4);
  }
 
+.icon:hover {
+  background-color: var(--col7);
+  transition: background-color 1s;
+}
+
 .icon img {
   padding: 0;
   height: 1rem;
   position: relative;
-  top: 2px;
+  top: 3px;
 }
 
 video{
