@@ -23,13 +23,16 @@ body {
   padding-left: var(--s0);
   padding-right: var(--s0);
   color: #fff;
-  border-right: var(--s-2) double var(--col7);
-  border-left: var(--s-2) double var(--col7);
   min-height: 100vh;
 }
 
 p {
   text-align: left;
+}
+
+blockquote p:first-child{
+  font-size: large;
+}
 }
 
 footer {
@@ -50,7 +53,8 @@ img {
 }
 
 .epigraph {
-  padding: var(--s-4) var(--s2);
+  padding-left: var(--s1);
+  padding-right: var(--s1);
 }
 
 
@@ -94,9 +98,6 @@ a {
   text-decoration-style: double;
 }
 
-
-
-
 a:hover {
   transition: 200ms;
   text-decoration-color: var(--col3);
@@ -104,8 +105,8 @@ a:hover {
 }
 
 nav {
-  line-height: 1.6;
   font-weight: bolder;
+  font-size: larger;
 }
 
 
@@ -121,6 +122,9 @@ nav a + a {
   margin-top: var(--s-1);
 }
 
+h1 a{
+  text-decoration: none;
+}
 content {
   font-size: 0.95em;
   text-align: justify;
