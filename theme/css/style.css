@@ -1,6 +1,13 @@
 :root {
-font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
-  font-size: calc(0.2vw + 1rem);
+  font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+  font-weight: normal;
+  --fratio: 1.2;
+  --fontsize-1: calc(var(--fontsize0) / var(--fratio));
+  --fontsize0: calc(0.2vw + 1rem);
+  --fontsize1: calc(var(--fontsize0) * var(--fratio));
+  --fontsize2: calc(var(--fontsize1) * var(--fratio));
+  --fontsize3: calc(var(--fontsize2) * var(--fratio));
+  font-size: var(--fontsize0);
   line-height: 1.8;
   --col1 :#3ebddb;
   --col2: #94dbeb;
@@ -12,6 +19,19 @@ font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, ser
   --col8: #0c3740;
   --col9: #041215;
 }
+
+h1 {
+  font-size: var(--fontsize3);
+}
+
+h2 {
+  font-size: var(--fontsize2);
+}
+
+h3 {
+  font-size: var(--fontsize1);
+}
+
 
 body {
   display: flex;
@@ -31,12 +51,11 @@ p {
 }
 
 blockquote p:first-child{
-  font-size: large;
-}
+  font-weight: bolder;
 }
 
 footer {
-  font-size: var(--s-1);
+  font-size: var(--fontsize-1);
   margin-top: var(--s1);
   margin-bottom: var(--s1);
   text-align: center;
@@ -104,9 +123,8 @@ a:hover {
   color: var(--col3);
 }
 
-nav {
-  font-weight: bolder;
-  font-size: larger;
+address a, nav {
+  font-size: var(--fontsize0);
 }
 
 
@@ -126,7 +144,6 @@ h1 a{
   text-decoration: none;
 }
 content {
-  font-size: 0.95em;
   text-align: justify;
 }
 
@@ -200,10 +217,10 @@ tr > th:first-child, tr > td:first-child {
 
 address > * > *{
   border-radius: var(--s-4);
+  padding: var(--s-8) var(--s-2);
   border: 1px solid var(--col2);
-  padding: var(--s-4) var(--s-2);
   color: white;
-  font-size: normal;
+  font-size: var(--fontsize-1);
   font-style: normal;
   text-decoration: none;
 }
