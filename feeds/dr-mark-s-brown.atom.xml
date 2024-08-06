@@ -1,5 +1,332 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mark Brown Private Tuition - Dr Mark S. Brown</title><link href="/" rel="alternate"></link><link href="/feeds/dr-mark-s-brown.atom.xml" rel="self"></link><id>/</id><updated>2018-11-07T00:00:00+00:00</updated><entry><title>Blacking my Narrowboat</title><link href="/resources/narrowboating/2018/11/07/blacking-my-narrowboat" rel="alternate"></link><published>2018-11-07T00:00:00+00:00</published><updated>2018-11-07T00:00:00+00:00</updated><author><name>Dr Mark S. Brown</name></author><id>tag:None,2018-11-07:/resources/narrowboating/2018/11/07/blacking-my-narrowboat</id><summary type="html">&lt;p&gt;This was the first time I've blacked narrowboat so I thought I'd write up my experiences and method used.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mark Brown Private Tuition - Dr Mark S. Brown</title><link href="/" rel="alternate"></link><link href="/feeds/dr-mark-s-brown.atom.xml" rel="self"></link><id>/</id><updated>2024-07-30T00:00:00+01:00</updated><entry><title>An Overview of Calculus</title><link href="/resources/mathematics/2024/07/30/an-overview-of-calculus" rel="alternate"></link><published>2024-07-30T00:00:00+01:00</published><updated>2024-07-30T00:00:00+01:00</updated><author><name>Dr Mark S. Brown</name></author><id>tag:None,2024-07-30:/resources/mathematics/2024/07/30/an-overview-of-calculus</id><summary type="html">&lt;h2&gt;What is gradient?&lt;/h2&gt;
+&lt;p&gt;Let's start with a visual. See if you can figure out how the numbers the
+variable &lt;span class="math"&gt;\(m\)&lt;/span&gt; corresponds to the line drawn.
+&lt;img alt="Numerical values of gradients with their lines" id="fig:gradientvalues" src="/images/mathematics/gradient-values.png"&gt;&lt;/p&gt;
+&lt;p&gt;Look at this image. Any ideas?
+&lt;img alt="Numerical values of gradients with their lines along with indicated steps" id="fig:gradientvalues2" src="/images/mathematics/gradient-values2.png"&gt;&lt;/p&gt;
+&lt;p&gt;The gradient is the slope of the line - how much we go up or down.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Defining the gradient between two points" id="fig:gradientdefn" src="/images/mathematics/gradient-defn.png"&gt;&lt;/p&gt;
+&lt;h2&gt;But Curves&lt;/h2&gt;
+&lt;p&gt;Of course …&lt;/p&gt;&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><content type="html">&lt;h2&gt;What is gradient?&lt;/h2&gt;
+&lt;p&gt;Let's start with a visual. See if you can figure out how the numbers the
+variable &lt;span class="math"&gt;\(m\)&lt;/span&gt; corresponds to the line drawn.
+&lt;img alt="Numerical values of gradients with their lines" id="fig:gradientvalues" src="/images/mathematics/gradient-values.png"&gt;&lt;/p&gt;
+&lt;p&gt;Look at this image. Any ideas?
+&lt;img alt="Numerical values of gradients with their lines along with indicated steps" id="fig:gradientvalues2" src="/images/mathematics/gradient-values2.png"&gt;&lt;/p&gt;
+&lt;p&gt;The gradient is the slope of the line - how much we go up or down.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Defining the gradient between two points" id="fig:gradientdefn" src="/images/mathematics/gradient-defn.png"&gt;&lt;/p&gt;
+&lt;h2&gt;But Curves&lt;/h2&gt;
+&lt;p&gt;Of course most lines are curved and so the gradient varies&lt;/p&gt;
+&lt;p&gt;&lt;img alt="As previous image but with a curve overlaid" id="fig:gradientdefn2" src="/images/mathematics/gradient-defn2.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Gradient of a Point&lt;/h2&gt;
+&lt;p&gt;The question becomes how to find the gradient &lt;em&gt;at&lt;/em&gt; a position not
+between two of them.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="a two dimension graph representation of equation~\ref{eqn:twopoint}" id="fig:twopoint" src="/images/mathematics/two-point-gradient.png"&gt;&lt;/p&gt;
+&lt;p&gt;The gradient of two points may be defined between two points
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+m = \frac{\Delta y}{\Delta x} = \frac{y(x_2) - y(x_1)}{x_2 - x_1}
+\label{eqn:twopoint}
+\end{equation}&lt;/div&gt;
+&lt;p&gt;Here we can use the average of the two positions to find the gradient at this single position.
+This of course assumes the gradient found &lt;em&gt;is&lt;/em&gt; the gradient of the position in between.
+This is not always True!
+But let's say that it is for now.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="a two dimension graph representation of equation~\ref{eqn:onepoint}" id="fig:onepoint" src="/images/mathematics/xdx-gradient.png"&gt;&lt;/p&gt;
+&lt;p&gt;For ease we will define a single coordinate and then seperate our two points either side of it as such
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+m = f'(x) = \frac{\Delta y}{\Delta x} = \frac{y(x + \frac{\Delta x}{2}) - y(x - \frac{\Delta x}{2})}{\Delta x}
+\label{eqn:onepoint}
+\end{equation}&lt;/div&gt;
+&lt;p&gt;Of interest to us, is what happens to &lt;span class="math"&gt;\(m\)&lt;/span&gt; as &lt;span class="math"&gt;\(\Delta x\)&lt;/span&gt; becomes increasingly small.&lt;/p&gt;
+&lt;h2&gt;Differentiation&lt;/h2&gt;
+&lt;p&gt;We find, that for well-behaved functions at least, we are asking what a future value will be based upon a step forward.&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+y(x + \frac{\Delta x}{2}) - y(x - \frac{\Delta x}{2}) = m \Delta x
+\end{equation}&lt;/div&gt;
+&lt;p&gt;
+This we can reduce down if we take the limit of &lt;span class="math"&gt;\(\Delta x\)&lt;/span&gt; to 0.
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+dy = \frac{dy}{dx} dx
+\end{equation}&lt;/div&gt;
+&lt;p&gt;
+where 
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+\frac{dy}{dx} = \lim_{\Delta x \rightarrow 0} m
+\end{equation}&lt;/div&gt;
+&lt;p&gt;
+The operation of 'finding' &lt;span class="math"&gt;\(\frac{dy}{dx}\)&lt;/span&gt; is called differentiation.
+In this case we are saying 'differentiate the function y with respect to x'.&lt;/p&gt;
+&lt;p&gt;We will use the following notation to indicate this.
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+\frac{d}{dx}(y) = \frac{dy}{dx} = y^\prime(x)
+\end{equation}&lt;/div&gt;
+&lt;h3&gt;Playing with differentiation&lt;/h3&gt;
+&lt;p&gt;Usefully we can see
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+dx &amp;amp;= \frac{dx}{dy}dy \\
+dx &amp;amp;= \frac{dx}{dy}\frac{dy}{dx} dx\\
+1 &amp;amp;= \frac{dx}{dy}\frac{dy}{dx}
+\end{align}&lt;/div&gt;
+&lt;p&gt;
+Another useful proof can be found if we consider alternative variables
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+\frac{dy}{du} du &amp;amp;= dy = \frac{dy}{dx} dx \\
+\frac{dy}{du} \frac{du}{dx} dx &amp;amp;= \frac{dy}{dx} dx \\
+\therefore \frac{dy}{du} \frac{du}{dx} &amp;amp;= \frac{dy}{dx}
+\end{align}&lt;/div&gt;
+&lt;p&gt;This is remarkably useful and is known as the chain rule.
+We'll use this to 'differentiate' composite functions.&lt;/p&gt;
+&lt;h3&gt;Exercises&lt;/h3&gt;
+&lt;p&gt;Using rule \ref{eqn:onepoint} we should be able to prove the following relationships.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Function&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align="right"&gt;Derivative&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(x^n \;\;(n \in \mathbb{Z} ; n \neq -1\)&lt;/span&gt;)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;span class="math"&gt;\(nx^{x-1}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\sin{x}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;span class="math"&gt;\(\cos{x}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\cos{x}\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;span class="math"&gt;\(-\sin{x}\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Further we will define a relationship that does not change - namely the
+natural exponential.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Function&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align="right"&gt;Derivative&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(e^x\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;span class="math"&gt;\(e^x\)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Differentiation as an operation&lt;/h2&gt;
+&lt;p&gt;To use these rules let's define a new operator so that we may perform
+'find gradient' in equations and inequalities.&lt;/p&gt;
+&lt;p&gt;We'll call this new operation, &lt;span class="math"&gt;\(\frac{d}{dp}\)&lt;/span&gt;, which in words means to
+find the gradient with respect to &lt;span class="math"&gt;\(p\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;We can change what variable we are interested in by&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+\frac{d}{dx} = \frac{dy}{dx}.\frac{d}{dy}
+\end{equation}&lt;/div&gt;
+&lt;h2&gt;Composing functions&lt;/h2&gt;
+&lt;p&gt;Conveniently, we may find the gradient of any (well-behaved!) function&lt;/p&gt;
+&lt;p&gt;Let's consider breaking a polynomial down, say &lt;span class="math"&gt;\(x^6 = (x^3)^2\)&lt;/span&gt;&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+x^{nm} &amp;amp;= (x^n)^m \\
+\frac{d}{dx}(x^{nm}) &amp;amp;= \frac{d}{dx}((x^n)^m) \\
+&amp;amp;= \frac{dp}{dx}\frac{d}{dp}(p^m) \\
+&amp;amp;= \frac{dp}{dx}mp^{m-1}
+\end{align}&lt;/div&gt;
+&lt;p&gt;
+where &lt;span class="math"&gt;\(p = x^n\)&lt;/span&gt; so
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+\frac{dp}{dx} &amp;amp;= nx^{n-1} \\
+\frac{d}{dx}(x^{nm}) &amp;amp;= nx^{n-1}mp^{m-1} \\
+&amp;amp;= nx^{n-1}m(x^n)^{m-1} \\
+&amp;amp;= nmx^{nm-1}
+\end{align}&lt;/div&gt;
+&lt;p&gt;Unsurprisingly this works out quite well.
+Let's consider an equation this time.&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+y &amp;amp;= x^\frac{n}{m} \\
+y^m &amp;amp;= x^n \\
+\frac{d}{dx}(y^m) &amp;amp;= \frac{d}{dx}(x^n) \\
+\frac{dy}{dx}\frac{d}{dy}(y^m) &amp;amp;= \frac{d}{dx}(x^n) \\
+\frac{dy}{dx}my^{m-1} &amp;amp;= nx^{n-1} \\
+\frac{dy}{dx} &amp;amp;= \frac{m}{n}x^{\frac{m}{n} - 1}
+\end{align}&lt;/div&gt;
+&lt;p&gt;Perhaps more interesting is we can solve more complex functions by
+breaking them into one of the five functions we recognise using this.
+For instance
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation*}
+y = \arcsin{x}\\
+\therefore \sin{y}= x\\
+\frac{d}{dx}(\sin{y})= \frac{d}{dx}(x)\\
+\frac{dy}{dx}.\frac{d}{dy}(\sin{y}) = \frac{d}{dx}(x) \\
+\frac{dy}{dx}.\cos{y} = 1\\
+\frac{dy}{dx} = \frac{1}{\cos{y}}
+\end{equation*}&lt;/div&gt;
+&lt;p&gt;
+This is fine but in this case we can put the result in terms of &lt;span class="math"&gt;\(x\)&lt;/span&gt; using the trignometry identity &lt;span class="math"&gt;\(\sin^2{x} +\cos^2{x} = 1\)&lt;/span&gt;.
+This gives
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation*}
+\frac{dy}{dx} = \frac{1}{\sqrt{1 - \sin^2{y}}}\\
+\frac{dy}{dx} = \frac{1}{\sqrt{1 - x^2}}
+\end{equation*}&lt;/div&gt;
+&lt;h2&gt;Multiplying Functions&lt;/h2&gt;
+&lt;p&gt;Consider a function
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+f &amp;amp;= uv
+\end{equation}&lt;/div&gt;
+&lt;p&gt;
+If &lt;span class="math"&gt;\(f\)&lt;/span&gt; varies, how do &lt;span class="math"&gt;\(u\)&lt;/span&gt; and &lt;span class="math"&gt;\(v\)&lt;/span&gt; vary?&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A area changing" id="fig:productrule" src="/images/mathematics/productrule.png"&gt;&lt;/p&gt;
+&lt;p&gt;Let's consider an area changing this time. &lt;span class="math"&gt;\(dx = u dv + v du\)&lt;/span&gt;
+Here we can see
+\begin{align}
+d(uv) &amp;amp;= \frac{d(uv)}{dx} dx \
+u dv + v du + du dv &amp;amp;= \frac{d(uv)}{dx} dx&lt;/p&gt;
+&lt;p&gt;u \frac{dv}{dx}dx + v \frac{du}{dx} dx &amp;amp;= \frac{d(uv)}{dx} dx \
+\therefore \frac{d}{dx}(uv) = \frac{du}{dx}v + u\frac{dv}{dx}
+\end{align}&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Mathematics"></category><category term="differentiation"></category><category term="integration"></category><category term="calculus"></category></entry><entry><title>Blacking my Narrowboat</title><link href="/resources/narrowboating/2018/11/07/blacking-my-narrowboat" rel="alternate"></link><published>2018-11-07T00:00:00+00:00</published><updated>2018-11-07T00:00:00+00:00</updated><author><name>Dr Mark S. Brown</name></author><id>tag:None,2018-11-07:/resources/narrowboating/2018/11/07/blacking-my-narrowboat</id><summary type="html">&lt;p&gt;This was the first time I've blacked narrowboat so I thought I'd write up my experiences and method used.
 At the very least it'll be useful for me in a few years time when I come to repeat the ordeal!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;So err... why bother?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Steel in water will corrode.
